@@ -3,79 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bazar de l’Aventurier</title>
+  <title>Le Bazar de l’Aventurier</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
     body {
       font-family: 'Georgia', serif;
       background-color: #1e1e1e;
       color: #eee;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #111;
+      position: relative;
+    }
+    header img {
+      height: 50px;
+    }
+    .search-lang {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .search-lang input[type="text"] {
+      padding: 5px;
+      border-radius: 5px;
+      border: none;
+    }
+    .search-lang select {
+      padding: 5px;
+      border-radius: 5px;
+      border: none;
+    }
+    .main {
       text-align: center;
-      padding: 40px;
+      padding: 40px 20px;
     }
-    h1 {
-      color: #ffce00;
-    }
-    .produit {
+    .goblin {
+      max-width: 300px;
       margin: 20px auto;
-      padding: 20px;
-      background-color: #2a2a2a;
+      display: block;
+    }
+    .bubble {
+      background: #2a2a2a;
       border-radius: 10px;
-      width: 80%;
+      padding: 20px;
+      margin: 20px auto;
       max-width: 600px;
     }
-    a {
-      color: #00ccff;
-      text-decoration: none;
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
     }
-    a:hover {
-      text-decoration: underline;
+    nav button {
+      background-color: #333;
+      color: #ffce00;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    nav button:hover {
+      background-color: #444;
     }
   </style>
 </head>
 <body>
-  <h1>Bienvenue au Bazar de l’Aventurier</h1>
-  <p>Ici, tu trouveras des outils, accessoires et livres pour t'équiper dans tes aventures de jeu de rôle.</p>
+  <header>
+    <img src="assets/logo-bazar.png" alt="Logo Bazar">
+    <div class="search-lang">
+      <input type="text" placeholder="Recherche...">
+      <select>
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+  </header>
 
-  <div class="produit">
-    <h2>💥 Dés métalliques de qualité</h2>
-    <p>Des dés lourds, brillants, et parfaits pour faire peur à ton MJ.</p>
-    <a href="https://amzn.to/3HzMpOk" target="_blank">Voir sur Amazon</a>
+  <div class="main">
+    <img src="assets/goblin-welcome.png" alt="Gobelin marchand" class="goblin">
+    <div class="bubble">
+      <p>Bienvenue au Bazar de l’Aventurier! Ici, tu trouveras tout ce dont tu as besoin pour tes aventures de jeux de rôle. Que puis-je faire pour toi?</p>
+      <nav>
+        <button>Dés de tout genre</button>
+        <button>Livres</button>
+        <button>Accessoires</button>
+        <button>Vêtements</button>
+        <button>LARP</button>
+        <button>Idées Cadeaux</button>
+        <button>Marketing Affilié</button>
+      </nav>
+    </div>
   </div>
 
-  <div class="produit">
-    <h2>📘 Guide du Maître (D&D 5e)</h2>
-    <p>Le classique indispensable pour mener des campagnes légendaires.</p>
-    <a href="https://www.amazon.ca/dp/B00XYZAB12?tag=toncodeaff" target="_blank">Acheter maintenant</a>
-  </div>
-  <div class="produit">
-  <h2>Dungeons & Dragons Starter Set</h2>
-  <p>La boîte parfaite pour débuter : manuel, dés, personnages, et aventures prêtes à jouer. Idéal aux débutants.</p>
-  <a href="https://amzn.to/3ZqWOlJ target="_blank">Voir sur Amazon</a>
-</div>
-
-<div class="produit">
-  <h2>D&D Essentials Kit</h2>
-  <p>Continue l’aventure après le Starter Set, jusqu’au niveau 6, avec cartes et règles étendues.</p>
-  <a href="TON_LIEN_AFFILIE_ESSENTIALS" target="_blank">Voir sur Amazon</a>
-</div>
-
-<div class="produit">
-  <h2>Dungeon Master's Screen (2024)</h2>
-  <p>Un écran stylé et pratique pour les maîtres de jeu, avec infos essentielles à portée de main.</p>
-  <a href="TON_LIEN_AFFILIE_SCREEN" target="_blank">Voir sur Amazon</a>
-</div>
-
-<div class="produit">
-  <h2>D&D 50th Anniversary Heavy Metal Dice Set</h2>
-  <p>Dés en métal premium pour marquer le coup : lourd, esthétique, parfait pour faire bonne impression.</p>
-  <a href="TON_LIEN_AFFILIE_DICE" target="_blank">Voir sur Amazon</a>
-</div>
-
-
-  <p style="margin-top: 50px;">D'autres produits bientôt! N'oublie pas de t'abonner à la newsletter (à venir).</p>
+  <!-- Sécurité de base -->
+  <script>
+    // Protection contre le clickjacking
+    if (window.top !== window.self) {
+      window.top.location = window.self.location;
+    }
+    // Désactiver le clic droit (optionnel)
+    document.addEventListener('contextmenu', event => event.preventDefault());
+  </script>
 </body>
 </html>
-<!-- Déclenche le déploiement -->
-Force redeploy pour GitHub Pages
-
-force redeploy
