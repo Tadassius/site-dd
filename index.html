@@ -3,114 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Le Bazar de l’Aventurier</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Le Bazar de l'Aventurier</title>
   <style>
     body {
+      margin: 0;
       font-family: 'Georgia', serif;
       background-color: #1e1e1e;
       color: #eee;
-      margin: 0;
-      padding: 0;
     }
     header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       padding: 10px 20px;
-      background-color: #111;
-      position: relative;
+      background-color: #2a2a2a;
     }
     header img {
       height: 50px;
     }
     .search-lang {
       display: flex;
-      align-items: center;
-      gap: 15px;
+      gap: 10px;
     }
-    .search-lang input[type="text"] {
+    .search-lang input {
       padding: 5px;
-      border-radius: 5px;
-      border: none;
     }
-    .search-lang select {
-      padding: 5px;
-      border-radius: 5px;
-      border: none;
-    }
-    .main {
+    main {
       text-align: center;
       padding: 40px 20px;
     }
-    .goblin {
-      max-width: 300px;
-      margin: 20px auto;
-      display: block;
+    .welcome {
+      position: relative;
+      display: inline-block;
     }
     .bubble {
-      background: #2a2a2a;
-      border-radius: 10px;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
       padding: 20px;
-      margin: 20px auto;
-      max-width: 600px;
+      border-radius: 10px;
+      border: 2px solid #ffce00;
+      max-width: 300px;
     }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding: 10px;
+    .bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 15px solid transparent;
+      border-top-color: #333;
     }
-    nav button {
-      background-color: #333;
+    .bubble p {
+      margin: 0;
+    }
+    .menu {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .menu button {
+      background-color: #444;
       color: #ffce00;
-      padding: 10px 20px;
       border: none;
-      border-radius: 5px;
+      padding: 10px;
+      border-radius: 8px;
       cursor: pointer;
     }
-    nav button:hover {
-      background-color: #444;
+    .menu button:hover {
+      background-color: #555;
+    }
+    footer {
+      margin-top: 60px;
+      font-size: 0.8em;
+      text-align: center;
+      color: #aaa;
+      padding: 20px;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="assets/logo-bazar.png" alt="Logo Bazar">
+    <img src="assets/logo-bazar.png" alt="Logo du Bazar">
     <div class="search-lang">
       <input type="text" placeholder="Recherche...">
-      <select>
-        <option value="fr">Français</option>
-        <option value="en">English</option>
+      <select onchange="changerLangue(this.value)">
+        <option value="fr">FR</option>
+        <option value="en">EN</option>
       </select>
     </div>
   </header>
 
-  <div class="main">
-    <img src="assets/goblin-welcome.png" alt="Gobelin marchand" class="goblin">
-    <div class="bubble">
-      <p>Bienvenue au Bazar de l’Aventurier! Ici, tu trouveras tout ce dont tu as besoin pour tes aventures de jeux de rôle. Que puis-je faire pour toi?</p>
-      <nav>
-        <button>Dés de tout genre</button>
-        <button>Livres</button>
-        <button>Accessoires</button>
-        <button>Vêtements</button>
-        <button>LARP</button>
-        <button>Idées Cadeaux</button>
-        <button>Marketing Affilié</button>
-      </nav>
+  <main>
+    <div class="welcome">
+      <img src="assets/goblin-welcome.png" alt="Gobelin marchand" width="300">
+      <div class="bubble">
+        <p>Bienvenue au Bazar de l’Aventurier! Ici, tu trouveras tout ce qu’il te faut pour tes aventures de jeux de rôle.</p>
+      </div>
     </div>
-  </div>
 
-  <!-- Sécurité de base -->
+    <div class="menu">
+      <button onclick="location.href='#des'">🎲 Dés de tout genre</button>
+      <button onclick="location.href='#livres'">📚 Livres</button>
+      <button onclick="location.href='#accessoires'">🏰 Accessoires</button>
+      <button onclick="location.href='#vetements'">🧥 Vêtements & sacs</button>
+      <button onclick="location.href='#larp'">⚔️ LARP</button>
+      <button onclick="location.href='#cadeaux'">🎁 Idées Cadeaux</button>
+      <button onclick="location.href='#affiliation'">📜 Info Affiliation</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.</p>
+  </footer>
+
   <script>
-    // Protection contre le clickjacking
-    if (window.top !== window.self) {
-      window.top.location = window.self.location;
+    function changerLangue(langue) {
+      alert("Fonction de traduction non encore active — page actuelle en: " + langue);
     }
-    // Désactiver le clic droit (optionnel)
-    document.addEventListener('contextmenu', event => event.preventDefault());
   </script>
 </body>
 </html>
