@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,13 +13,10 @@
     }
     header {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       padding: 10px 20px;
       background-color: #2a2a2a;
-    }
-    header img {
-      height: 50px;
     }
     .search-lang {
       display: flex;
@@ -91,7 +87,6 @@
 </head>
 <body>
   <header>
-    <img src="assets/logo-bazar.png" alt="Logo du Bazar">
     <div class="search-lang">
       <input type="text" placeholder="Recherche...">
       <select onchange="changerLangue(this.value)">
@@ -103,7 +98,7 @@
 
   <main>
     <div class="welcome">
-      <img src="assets/goblin-welcome.png" alt="Gobelin marchand" width="300">
+      <img src="assets/goblin-welcome.png" alt="Gobelin marchand avec logo" width="600">
       <div class="bubble">
         <p>Bienvenue au Bazar de l’Aventurier! Ici, tu trouveras tout ce qu’il te faut pour tes aventures de jeux de rôle.</p>
       </div>
