@@ -1,137 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Adventurer's Bazaar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bazar de l'Aventurier</title>
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      font-family: 'Georgia', serif;
       background-color: #1e1e1e;
       color: #eee;
     }
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #2a2a2a;
-    }
-    .logo {
-      height: 50px;
-    }
-    .search-lang {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-    .search-lang input {
-      padding: 5px;
-      border-radius: 5px;
-      border: 1px solid #888;
-    }
-    main {
+      background-color: #272727;
+      padding: 1rem 2rem;
       text-align: center;
-      padding: 40px 20px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ffcc00;
     }
-    .welcome {
-      position: relative;
-      display: inline-block;
+    .intro {
+      text-align: center;
+      padding: 2rem;
+      font-size: 1.1rem;
+      line-height: 1.5;
     }
-    .bubble {
-      position: absolute;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #333;
-      padding: 20px;
-      border-radius: 10px;
-      border: 2px solid #ffce00;
-      max-width: 320px;
-    }
-    .bubble::after {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 15px solid transparent;
-      border-top-color: #333;
-    }
-    .bubble p {
-      margin: 0;
-    }
-    .menu {
-      margin-top: 40px;
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 1rem 2rem;
     }
-    .menu button {
-      background-color: #444;
-      color: #ffce00;
-      border: none;
-      padding: 12px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
+    .card {
+      background-color: #2b2b2b;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
-    .menu button:hover {
-      background-color: #555;
+    .card h2 {
+      color: #ffcc00;
+    }
+    .card p {
+      font-size: 0.95rem;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #00ccff;
+      text-decoration: none;
+    }
+    .card a:hover {
+      text-decoration: underline;
     }
     footer {
-      margin-top: 60px;
-      font-size: 0.8em;
+      background-color: #272727;
       text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
       color: #aaa;
-      padding: 20px;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAB0klEQVR4nO3bMW4TURCA4Z+n0AklTRqIQnBAnUoAKjSgCrSgChQigQpUK6IgCQpUO0EZhkkDPT7LNvddxrsn9vPOZmS9k7u07b9c80MvtqvOYxy+80ASjAHjgCRyD3gGrgBrgTrgBnCHmVAuAG+UBuDAsvwDIrSGDHClxRcCMINu+jBRF4Erxq5hZn5BGHeBteprVRKfQZKqL3AYsaXyHoEnP1M7ZprV7ZptWgM2vPKu2tZdNo9TuRrQlTSiF5LO03E+xzjDdpHsSfb2R7qnS3uTHmSkpZneC3nWW0CNodn2Y6CDX22b7qZTXQb68xnW6zBcxWsN06ak81Z4qvsl1FuxEsZ7ChjWHxX9CFY7j7rqrFnGVsYfFs+xbdxqDFrakNW1HV9Jk88GV6qM4UXPT5I1sbLyUduHFK3N1rYfI0Z7NFXqXjVd7EPc4bblssPbD9O39k1v72qV2aez3dUAAAAASUVORK5CYII=" alt="Logo du Bazar" /> 
-    <div class="search-lang">
-      <input type="text" placeholder="Search...">
-      <select onchange="changerLangue(this.value)">
-        <option value="en" selected>EN</option>
-        <option value="fr">FR</option>
-      </select>
+  <header>Bazar de l'Aventurier</header>
+
+  <div class="intro">
+    Bienvenue! Tu trouveras ici une sélection d'objets pour enrichir tes campagnes de jeux de rôle. Équipe-toi comme un vrai aventurier!
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>🎲 Dés</h2>
+      <p>Choisis des dés épiques pour des jets légendaires!</p>
+      <a href="#">Voir les dés</a>
     </div>
-  </header>
-  <main>
-    <div class="welcome">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAwAAAAIACAYAAABnZH6XAAAgAElEQVR4nOzdS44cRZIE0Il8f9GmdY06ZKqkF+RReG5BMQLGrGLB+kBo6C1UCFRAfUu+gdq3+a8ZWSmjf3/2kwwZjX/dY9vF6zeqOX8vjjDa64sCBAgAABAgQIECBAgAABAjT2BdBytuUJbn6sw28d3+2gx/0qTx0z0qsfPYWVP2LL2obueaeJZcx+ZCtn3vSmXxJ3du+siUSBAgQIECAAAECBAgQIFCgz+DwB5I+6P2ZDW5R+9pkO/fu28uNukv+eX0S3mSTrHn7fzyJXfRE2vknZ8Pt95Mj0ZIECAAAECBAgQIECAAAECFDWAn06Ymzv+RYctP8ynb+unXtvulN7fO8u3bxeW2zy+ybTmeZ0n+6Lnmlyq6zgECBAgQIECAAAECBAgQ6EOBPW92HhnJgZvudkp1euws91Yx15rWwZVV/f3vOy49y7Jddk+e7OtOl99zpa1/VpmmumYkQIAAAQIECBAgQIAAAQIE6AKBoU+Z8zT43v4xvOikjzhtzljM16VvddZt1Wlp/7Nfhrk+nGz5rRrdu2h3+p5l47tQIECAAAECBAgQIECAAAEChR0oG1Tbrx0a17+xfsw6b98/3pyuWqR+6/srrz7VXb9Y66zNc1gQIECBAgAABAgQIECBAgECtA4Fr63e89Zw/EfqtWT37dfscf+zS6/sHRdH/8D6jhyguJ1Y8rAAAAAElFTkSuQmCC" alt="Gobelin marchand" width="320">
-      <div class="bubble">
-        <p>Welcome to the Adventurer’s Bazaar! Here, you’ll find everything you need for your tabletop RPG quests.</p>
-      </div>
+    <div class="card">
+      <h2>📚 Livres</h2>
+      <p>Les meilleurs guides, aventures et manuels de règles.</p>
+      <a href="#">Voir les livres</a>
     </div>
-    <div class="menu">
-      <button onclick="location.href='#dice'">🎲 Dice</button>
-      <button onclick="location.href='#books'">📚 Books</button>
-      <button onclick="location.href='#accessories'">🏰 Accessories</button>
-      <button onclick="location.href='#clothing'">🧥 Apparel</button>
-      <button onclick="location.href='#larp'">⚔️ LARP</button>
-      <button onclick="location.href='#gifts'">🎁 Gift Ideas</button>
-      <button onclick="location.href='#affiliate'">📜 Affiliate Info</button>
+    <div class="card">
+      <h2>🏰 Accessoires</h2>
+      <p>Maquettes, figurines et plus pour donner vie à vos sessions.</p>
+      <a href="#">Voir les accessoires</a>
     </div>
-  </main>
+    <div class="card">
+      <h2>🧥 Vêtements & Sacs</h2>
+      <p>Montre ton style avec des articles inspirés de D&D.</p>
+      <a href="#">Voir les vêtements</a>
+    </div>
+    <div class="card">
+      <h2>⚔️ LARP</h2>
+      <p>Équipement pour le grandeur nature immersif.</p>
+      <a href="#">Voir la section LARP</a>
+    </div>
+    <div class="card">
+      <h2>🎁 Idées Cadeaux</h2>
+      <p>Des suggestions pour faire plaisir à tout aventurier.</p>
+      <a href="#">Voir les idées cadeaux</a>
+    </div>
+  </div>
+
   <footer>
-    <p>As an Amazon Associate, I earn from qualifying purchases.</p>
+    En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.
   </footer>
-  <script>
-    function changerLangue(langue) {
-      if (langue === "fr") {
-        window.location.href = "index-fr.html";
-      } else {
-        window.location.href = "index.html";
-      }
-    }
-  </script>
 </body>
 </html>
-
